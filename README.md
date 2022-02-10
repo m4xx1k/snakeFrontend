@@ -1,3 +1,12 @@
+## npm i mobx mobx-react-lite random-int uniqid
+# SNAKE  
+## Counting points
+## Snake's move: left, right, forward, back
+## Pause
+## Three types of feed
+## Every 50 point snake's speed is increase
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
