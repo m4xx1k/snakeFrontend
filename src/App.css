@@ -1,38 +1,81 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Rowdies', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.gameSpace{
+  width: 500px;
+  height: 500px;
+  position: relative;
+  background: #000;
+  margin-top: 5%;
+  border: 5px solid #000;
+  border-radius: 2%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.snake{
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: #00FF00;
+  border-radius: 40%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.gameInfo{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: 700;
+  width: 400px;
+}
+.apple{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }
 
-.App-link {
-  color: #61dafb;
+.rules{
+  width: 400px;
+  font-size: 26px;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pause{
+  margin-top: 15px;
 }
+.start{
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.feed{
+  margin-top: 15px;
+}
+
+.feed-item{
+  display: flex;
+  margin-top: 10px;
+}
+
+.feed-appearance{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.feed-appearance1{
+  background: #FFF01F;
+}
+.feed-appearance2{
+  background: #00FFFF;
+}
+.feed-appearance3{
+  background: #FF0000;
+}
+
+.speed{
+  margin-top: 15px;
+}
+

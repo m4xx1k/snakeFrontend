@@ -11,17 +11,17 @@ class Square {
     elems = [
         {
             id: 1,
-            x: 540,
+            x: 340,
             y: 200,
         },
         {
             id: 2,
-            x: 540,
+            x: 340,
             y: 220,
         },
         {
             id: 3,
-            x: 540,
+            x: 340,
             y: 240,
         },
 
@@ -29,40 +29,39 @@ class Square {
     ]
 
     apple = {
-        x: randomInteger(1, 29) * 20,
-        y: randomInteger(1, 29) * 20,
-        background: 'YellowGreen',
+        x: randomInteger(1, 24) * 20,
+        y: randomInteger(1, 24) * 20,
+        background: '#FFF01F',
         weight: 1,
     }
 
     start = [
         {
             id: 1,
-            x: 540,
+            x: 340,
             y: 200,
         },
         {
             id: 2,
-            x: 540,
+            x: 340,
             y: 220,
         },
         {
             id: 3,
-            x: 540,
+            x: 340,
             y: 240,
         }
     ]
 
     randomTypeApple;
 
-
-    speed = 50
+    speed = 10
     speedName = 'Slow'
     modSpeed= 0
 
     points = 3;
 
-    pause = ''
+    pause = 'PAUSE'
 
     checkX;
     checkY;
@@ -91,23 +90,23 @@ class Square {
 
     eating() {
         if (this.elems[0].x === this.apple.x && this.elems[0].y === this.apple.y) {
-            this.apple.x = randomInteger(1, 29) * 20
-            this.apple.y = randomInteger(1, 29) * 20
+            this.apple.x = randomInteger(1, 24) * 20
+            this.apple.y = randomInteger(1, 24) * 20
             this.elems.push({id: uniqid(), x: this.lastX, y: this.lastY})
             this.points = this.points + this.apple.weight
 
             this.randomTypeApple = randomInteger(1,8)
             if(this.randomTypeApple%3===0){
                 this.apple.weight = 5
-                this.apple.background = 'Gold'
+                this.apple.background = '#00FFFF'
             }
             if(this.randomTypeApple === 7){
                 this.apple.weight = 10
-                this.apple.background = 'indigo'
+                this.apple.background = '#FF0000'
             }
             if(this.randomTypeApple%2===0 || this.randomTypeApple ===1 || this.randomTypeApple ===5){
                 this.apple.weight = 1
-                this.apple.background = 'GreenYellow'
+                this.apple.background = '#FFF01F'
             }
             this.speedUp()
         }
@@ -116,15 +115,15 @@ class Square {
     speedUp(){
         if(Math.floor(this.points/50)>this.modSpeed && this.speed>50){
             this.modSpeed = this.modSpeed + 1
-            this.speed = this.speed - 50
+            this.speed = this.speed - 40
             switch(this.speed){
-                case 150:
+                case 120:
                     this.speedName = 'Fast'
                     break;
-                case 100:
+                case 80:
                     this.speedName = "Faster"
                     break;
-                case 50:
+                case 40:
                     this.speedName = "The Fastest"
                     break;
             }
@@ -135,8 +134,9 @@ class Square {
     checkAppleCoordinate() {
         this.elems.forEach(elem => {
             if (elem.x === this.apple.x && elem.y === this.apple.y) {
-                this.apple.x = randomInteger(1, 29) * 20
-                this.apple.y = randomInteger(1, 29) * 20
+                this.apple.x = randomInteger(1, 24) * 20
+                this.apple.y = randomInteger(1, 24) * 20
+                this.speed = 160
             }
         })
     }
@@ -151,16 +151,19 @@ class Square {
                 this.elems = this.start
                 this.points = 3
                 this.lastKey = 'w'
+                this.speed = 160
             }
         })
 
         //checking border
-        this.checkX = this.elems[0].x === 600 || this.elems[0].x === -20
-        this.checkY = this.elems[0].y === 600 || this.elems[0].y === -20
+        this.checkX = this.elems[0].x === 500 || this.elems[0].x === -20
+        this.checkY = this.elems[0].y === 500 || this.elems[0].y === -20
 
         if (this.checkY || this.checkX) {
             this.elems = this.start
             this.points = 3
+            this.speed = 160
+
         }
 
 
