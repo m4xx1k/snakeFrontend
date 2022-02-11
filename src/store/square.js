@@ -55,7 +55,7 @@ class Square {
 
     randomTypeApple;
 
-    speed = 160
+    speed = 10
     speedName = 'Slow'
     modSpeed= 0
 
